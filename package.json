@@ -1,0 +1,23 @@
+{
+  "name": "chat",
+  "version": "0.0.1",
+  "description": "chat for tochka",
+  "main": "server/index.js",
+  "dependencies": {
+    "angular": "^1.5.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sosloow/chat.git"
+  },
+  "author": "Stepan Shilin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sosloow/chat/issues"
+  },
+  "homepage": "https://github.com/sosloow/chat#readme"
+}
