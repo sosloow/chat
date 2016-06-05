@@ -61,8 +61,18 @@ gulp.task('lint', function () {
       rules: {
         'no-console': 0
       },
+      ecmaFeatures: {
+        sourceType: "module"
+      },
+      "parserOptions": {
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true,
+            "experimentalObjectRestSpread": true
+        }
+      },
       extends: 'eslint:recommended',
-      envs: ['browser', 'commonjs']
+      envs: ['browser', 'node', 'es6']
     }))
     .pipe(eslint.format())
     .pipe(eslint.failAfterError());

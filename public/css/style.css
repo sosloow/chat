@@ -1,0 +1,27 @@
+textarea {
+  resize: none;
+}
+
+.channel {
+}
+
+.message-list {
+  height: 500px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.name-list {
+  padding: 0;
+  /* border-left: 1px solid #ddd; */
+}
+
+.name-list-item {
+  list-style: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.name-list-item:hover {
+  background-color: #dddddd;
+}

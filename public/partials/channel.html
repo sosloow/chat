@@ -1,0 +1,22 @@
+<div class="row channel">
+  <div class="col-sm-10 message-list">
+    <p ng-repeat="message in vm.messages">
+      <strong>{{::message.name}}</strong>
+      {{::message.body}}
+    </p>
+  </div>
+  <div class="col-sm-2">
+    <ul class="name-list">
+      <li ng-repeat="guy in vm.guys" class="name-list-item">{{::guy.name}}</li>
+    </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-10">
+    <form ng-submit="vm.sendMessage()">
+      <textarea ng-model="vm.newMessage.body" class="form-control"
+                required>
+      </textarea>
+    </form>
+  </div>
+</div>
