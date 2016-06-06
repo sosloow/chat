@@ -1,22 +1,30 @@
 <div class="row channel">
-  <div class="col-sm-10 message-list">
-    <p ng-repeat="message in vm.messages">
-      <strong>{{::message.name}}</strong>
-      {{::message.body}}
-    </p>
+  <div class="col-sm-10 message-list" scroll-from-bottom="vm.channel.messages">
+    <div class="message-list-inner">
+      <p ng-repeat="message in vm.channel.messages">
+        <span class="timestamp">[{{message.createdAt | date:'hh:MM:ss'}}]</span>
+        <strong ng-if="message.user"
+                ng-style="{color: message.user.color}"
+                >{{::message.user.name}}:</strong>
+        <span ng-class="{'technical-message': !message.user}">{{::message.body}}</span>
+      </p>
+    </div>
   </div>
   <div class="col-sm-2">
     <ul class="name-list">
-      <li ng-repeat="guy in vm.guys" class="name-list-item">{{::guy.name}}</li>
+      <li ng-repeat="user in vm.channel.users"
+          class="name-list-item" ng-style="{color: user.color}"
+          >{{::user.name}}</li>
     </ul>
   </div>
 </div>
-<div class="row">
-  <div class="col-sm-10">
-    <form ng-submit="vm.sendMessage()">
-      <textarea ng-model="vm.newMessage.body" class="form-control"
-                required>
-      </textarea>
-    </form>
+<form class="row" ng-submit="vm.sendMessage()">
+  <div class="col-sm-9">
+    <textarea ng-model="vm.newMessage.body" class="form-control"
+              required>
+    </textarea>
   </div>
-</div>
+  <div class="col-sm-1">
+    <button class="btn btn-primary" type="submit">Send</button>
+  </div>
+</form>

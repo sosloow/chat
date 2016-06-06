@@ -1,9 +1,1 @@
-exports.defaultChannels = [{
-  name: 'global'
-}, {
-  name: 'random'
-}, {
-  name: 'sales'
-}, {
-  name: 'dev'
-}];
+exports.defaultChannels = ['global', 'random', 'sales', 'dev'];

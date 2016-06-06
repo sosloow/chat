@@ -1,5 +1,8 @@
 import angular from 'angular';
 
-angular.module('app.directives', []);
+import scrollFromBottom from './scroll-from-bottom';
+
+angular.module('app.directives', [])
+.directive('scrollFromBottom', scrollFromBottom);
 
 export default 'app.directives';

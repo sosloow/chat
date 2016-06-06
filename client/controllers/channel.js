@@ -1,42 +1,20 @@
 export default class ChannelCtrl {
-  constructor() {
-    this.messages = [{
-      name: 'vasya',
-      body: 'lorem ipsum'
-    }, {
-      name: 'vasya',
-      body: 'lorem ipsum'
-    }, {
-      name: 'vasya',
-      body: 'lorem ipsum'
-    }, {
-      name: 'vasya',
-      body: 'lorem ipsum'
-    }, {
-      name: 'vasya',
-      body: 'lorem ipsum'
-    }, {
-      name: 'vasya',
-      body: 'lorem ipsum'
-    }];
+  constructor($stateParams, Channel) {
+    this.$stateParams = $stateParams;
+    this.Channel = Channel;
 
-    this.guys = [{
-      name: 'vasya'
-    }, {
-      name: 'vasya'
-    }, {
-      name: 'vasya'
-    }, {
-      name: 'vasya'
-    }, {
-      name: 'vasya'
-    }, {
-      name: 'vasya'
-    }];
+    this.newMessage = {};
+
+    this.channel = this.Channel.get($stateParams.channelName);
   }
 
   sendMessage() {
+    this.Channel.send(
+      this.$stateParams.channelName,
+      this.newMessage.body);
+
+    this.newMessage.body = '';
   }
 }
 
-ChannelCtrl.$inject = [];
+ChannelCtrl.$inject = ['$stateParams', 'Channel'];

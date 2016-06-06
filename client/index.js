@@ -35,7 +35,7 @@ angular.module('Chat', [
     })
 
     .state('app.channel', {
-      url: ':name',
+      url: ':channelName',
       templateUrl: 'partials/channel.html',
       controller: ChannelCtrl,
       controllerAs: 'vm'

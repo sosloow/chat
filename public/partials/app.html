@@ -1,7 +1,11 @@
 <div class="row">
   <ul class="nav nav-tabs">
-    <li ui-active="active" ng-repeat="channel in appVm.channels">
-      <a ui-sref="app.channel({name: channel.name})">{{::channel.name}}</a>
+    <li ui-sref-active="active" ng-repeat="channel in appVm.channels">
+      <a ui-sref="app.channel({channelName: channel.name})"
+         ng-click="channel.pending=false">
+        {{::channel.name}}
+        <span ng-show="channel.pending">*</span>
+      </a>
     </li>
   </ul>
 </div>

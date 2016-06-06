@@ -1,6 +1,6 @@
 export default class ChannelCtrl {
   constructor($state) {
-    $state.go('app.channel', {name: 'global'});
+    $state.go('app.channel', {channelName: 'global'});
   }
 }
 
